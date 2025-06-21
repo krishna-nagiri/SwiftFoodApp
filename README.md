@@ -13,6 +13,14 @@ SwiftFood is a role-based console food delivery application developed in Java as
 * Transition to full-stack web development after feature completion
 
 ---
+## 🧰 Tech Stack
+
+- Java 11+
+- GSON (for JSON file-based data storage)
+- Visual Studio Code (recommended)
+- Git & GitHub
+
+---
 
 ## 👥 Roles and Functionalities
 
@@ -49,6 +57,14 @@ SwiftFood is a role-based console food delivery application developed in Java as
 * Track working hours and earnings
 
 ---
+## 🔐 Sample Admin Login
+
+| Field     | Value        |
+|-----------|--------------|
+| Username  | `admin`      |
+| Password  | `admin123@`  |
+
+---
 
 ## 📂 File and Folder Structure
 
@@ -80,14 +96,37 @@ src/
 ├── resources/
 ├── .vscode/
 ```
+## 🛠️ How to Run
 
-> You can customize the structure in `.vscode/settings.json`.
+### 🔁 Setup Instructions
 
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/SwiftFoodApp.git
+
+2. Navigate to the project folder:
+ ```
+  cd SwiftFoodApp
+```
+3. Run the app using Git Bash or Linux:
+   ```
+   ./runApp.sh
+   ```
+4. Or run using Windows CMD:
+   ```
+    runApp.bat
+   ```
 ---
-
-## 🧩 Features To Be Completed
-
-* [x] Role-based login (admin, customer, restaurant, delivery partner)
+⚠ Make sure gson-2.10.1.jar exists in the lib/ directory.
+---
+## ✅ Completed Features
+* [x] Project setup and structure
+* [x] Admin login
+* [x] View customer, restaurant, and delivery partner counts
+* [x] JSON file storage (using GSON)
+* [x] Run automation script (runApp.sh)
+---
+## ⏳ TODO (Upcoming Features)
 * [ ] Role-based homepages with stats and options
 * [ ] Menu and food search system
 * [ ] Order placement and tracking
@@ -115,4 +154,7 @@ Developed by Murali Krishna Nagiri as part of Java full-stack learning path.
 
 ## 📞 Support
 
-Need help or ideas? Connect during your learning sprint!
+
+Let me know if you'd like this saved as a file or want help pushing the updated README to GitHub.
+📧 24016000mca@gmail.com
+---
