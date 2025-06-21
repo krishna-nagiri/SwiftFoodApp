@@ -1,0 +1,21 @@
+# Compiled files
+/bin/
+/out/
+
+# VSCode settings
+.vscode/
+
+# OS metadata files
+.DS_Store
+Thumbs.db
+
+# JSON runtime data (optional if you don't want to track changes)
+data/*.json
+
+# Class files
+*.class
+*.txt
+
+# Logs
+*.log
+
