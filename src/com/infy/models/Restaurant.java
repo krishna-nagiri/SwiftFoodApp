@@ -1,47 +1,53 @@
 package com.infy.models;
 
+import java.time.LocalTime;
+import com.infy.data.*;
+
+import java.util.ArrayList;
+
 public class Restaurant {
-    private String restaurantId = "RES";
+    private String restaurantId;
     private String restaurantName;
     private String restaurantAddress;
     private long restaurantContact;
     private String emailId;
     private String password;
-    private float rating;
-    private static int counter;
-    private static int restaurantCount;
+    private double rating;
+    private LocalTime startTime;
+    private LocalTime endTime;
+    private double totalEarnings;
     
-    public Restaurant(String name,String emailId,String password,long restaurantContact,String restaurantAddress,float rating){
-        this.restaurantId += counter;
+    public Restaurant(String restaurantId,String name, String emailId, String password, long restaurantContact,String restaurantAddress, double rating, LocalTime startTime, LocalTime endTime) {
+        this.restaurantId = restaurantId;
         this.restaurantName = name;
         this.emailId = emailId;
         this.password = password;
         this.restaurantAddress = restaurantAddress;
         this.rating = rating;
         this.restaurantContact = restaurantContact;
-        counter++;
-        ++restaurantCount;
-        //System.out.println("Restaurant  "+this.restaurantName+" added successfully.\nRestaurant Count = "+restaurantCount);
-        
+        this.startTime = startTime;
+        this.endTime = endTime;
+
     }
-    static{
-        counter = 1000;
-        restaurantCount = 0;
-    }
-    // public Restaurant(){
-    //     System.out.println("non_parameterized customer.");
-    // }
-    public String getEmailId(){
-        return this.emailId;
-    }
+
+    // Setter Methods
     public void setRestaurantAddress(String restaurantAddress){
         this.restaurantAddress = restaurantAddress;
     }
+    public void setRating(double rating){
+        this.rating = rating;
+    }
+    public void setStartTime(LocalTime starTime){
+        this.startTime = starTime;
+    }
+    public void setEndTime(LocalTime endTime){
+        this.endTime = endTime;
+    }
+    public void setRestaurantName(String restaurantName){
+        this.restaurantName = restaurantName;
+    }
     public void setEmailId(String emailId){
         this.emailId = emailId;
-    }
-    public String getPassword(){
-        return this.password;
     }
     public void setPassword(String passoword){
         this.password = passoword;
@@ -49,27 +55,52 @@ public class Restaurant {
     public void setrestaurantContact(long restaurantContact){
         this.restaurantContact = restaurantContact;
     }
+    
+
+    //Getter Methods
     public long getrestaurantContact(){
         return this.restaurantContact;
     }
     public String getRestaurantName(){
         return this.restaurantName;
     }
-    public void setRestaurantName(String restaurantName){
-        this.restaurantName = restaurantName;
-    }
-    public static int getRestaurantCount(){
-        return restaurantCount;
+    public String getPassword(){
+        return this.password;
     }
     public String getRestaurantAddress(){
         return this.restaurantAddress;
     }
+    public LocalTime getStartTime(){
+        return this.startTime;
+    }
+    public LocalTime getEndTime(){
+        return this.endTime;
+    }
     public String getRestaurantId(){
         return this.restaurantId;
     }
+    public String getEmailId(){
+        return this.emailId;
+    }
+    public double getRating(){
+        return this.rating;
+    }
+    public double getTotalEarnings() {
+        return totalEarnings;
+    }
+
+    public void addEarnings(double amount) {
+        this.totalEarnings += amount;
+    }
+
+    public boolean isWithinOperatingHours() {
+        LocalTime now = LocalTime.now();
+        return !now.isBefore(startTime) && !now.isAfter(endTime);
+    }
+
     public String toString(){
         return "Restaurant Name : "+restaurantName+"\nId: "+restaurantId+
-        "Rating : " +rating+"\n"+"Address : "+restaurantAddress +"\n";
+        "\nRating : " +rating+"\n"+"Address : "+restaurantAddress +"\n"+"Start Time : "+startTime+ " AM \n"+"Closing Time : "+endTime+" PM\n";
     }
     
 }

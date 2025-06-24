@@ -9,7 +9,7 @@ SwiftFood is a role-based console food delivery application developed in Java as
 ## 🚀 Project Goal
 
 * Implement all food delivery features using Java (OOP, lists, encapsulation, basic data simulation)
-* Complete the console version within the first 7–10 days
+* Complete the console version with real world features.(Simulation)
 * Transition to full-stack web development after feature completion
 
 ---
@@ -17,7 +17,7 @@ SwiftFood is a role-based console food delivery application developed in Java as
 
 - Java 11+
 - GSON (for JSON file-based data storage)
-- Visual Studio Code (recommended)
+- Visual Studio Code
 - Git & GitHub
 
 ---
@@ -72,30 +72,59 @@ SwiftFood is a role-based console food delivery application developed in Java as
 src/
 ├── com/
 │   └── infy/
-│       ├── App.java
-│       ├── models/
+│       ├── App.java                        ← Main launcher
+│
+│       ├── models/                         ← POJOs / Data Models
 │       │   ├── Customer.java
 │       │   ├── Restaurant.java
 │       │   ├── DeliveryPartner.java
 │       │   ├── Food.java
 │       │   └── Order.java
-│       ├── data/
+│
+│       ├── data/                           ← Persistence/Data Access
 │       │   ├── CustomerData.java
 │       │   ├── RestaurantData.java
 │       │   ├── DeliveryPartnerData.java
-│       ├── services/
+│       │   ├── FoodData.java
+│       │   └── OrderData.java
+│
+│       ├── services/                       ← Business logic
 │       │   ├── UserLoginService.java
-│       │   ├── OrderService.java
-│       └── ui/
-│           ├── AdminHomePage.java
-│           ├── CustomerHomePage.java
-│           ├── RestaurantHomePage.java
-│           ├── DeliveryPartnerHomePage.java
-├── lib/
-├── bin/
-├── resources/
-├── .vscode/
-```
+│       │   └── OrderService.java
+│
+│       └── ui/                             ← User Interfaces (modularized by role)
+│           ├── admin/
+│           │   ├── AdminHomePage.java
+│           │   ├── AdminStatsMenu.java
+│           │   ├── AdminDeleteMenu.java
+│           │   └── AdminOrderMenu.java
+│
+│           ├── customer/
+│           │   ├── CustomerHomePage.java
+│           │   ├── CustomerOrderMenu.java
+│           │   ├── CustomerProfileMenu.java
+│           │   └── CustomerSearchMenu.java
+│
+│           ├── restaurant/
+│           │   ├── RestaurantHomePage.java
+│           │   ├── RestaurantFoodMenu.java
+│           │   ├── RestaurantOrderMenu.java
+│           │   └── RestaurantProfileMenu.java
+│
+│           ├── deliveryPartner/
+│           │   ├── DeliveryPartnerHomePage.java
+│           │   ├── DeliveryPartnerOrderMenu.java
+│           │   ├── DeliveryPartnerProfileMenu.java
+│           │   └── DeliveryPartnerEarningsMenu.java
+│
+│           └── shared/
+│               └── (optional helper UIs later)
+│
+├── lib/                                   
+├── bin/                                    
+├── resources/                              
+├── .vscode/                                
+
 ## 🛠️ How to Run
 
 ### 🔁 Setup Instructions
@@ -125,16 +154,13 @@ src/
 * [x] View customer, restaurant, and delivery partner counts
 * [x] JSON file storage (using GSON)
 * [x] Run automation script (runApp.sh)
----
-## ⏳ TODO (Upcoming Features)
-* [ ] Role-based homepages with stats and options
-* [ ] Menu and food search system
-* [ ] Order placement and tracking
-* [ ] Delivery partner assignment and status updates
-* [ ] Feedback and rating system
-* [ ] Cashback and earnings tracking
-* [ ] Admin dashboard with all reports
-
+* [x] Role-based homepages with stats and options
+* [x] Menu and food search system
+* [x] Order placement and tracking
+* [x] Delivery partner assignment and status updates
+* [x] Feedback and rating system
+* [x] Cashback and earnings tracking
+* [x] Admin dashboard with all reports
 ---
 
 ## 🛣️ Future Scope

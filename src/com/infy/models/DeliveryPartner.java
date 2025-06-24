@@ -2,26 +2,22 @@ package com.infy.models;
 
 public class DeliveryPartner {
     private String partnerName;
-    private String partnerId = "DRI";
-    private static int counter;
+    private String partnerId;
     private String emailId;
     private String password;
     private long contactNumber;
-    private static int partnerCount;
+    private double totalEarnings;
 
-    public DeliveryPartner(String partnerName,String emailId,String password,long contactNumber){
+    public DeliveryPartner(String partnerId,String partnerName,String emailId,String password,long contactNumber){
         this.partnerName = partnerName;
         this.emailId = emailId;
         this.password = password;
         this.contactNumber = contactNumber;
-        this.partnerId += counter;
-        counter++;
-        partnerCount++;
+        this.partnerId = partnerId;
+        this.totalEarnings = 0.0;
+
     }
-    static{
-        counter = 101;
-        partnerCount = 0;
-    }
+
     // setter methods
     public void setPatnerName(String patnerName){
         this.partnerName = patnerName;
@@ -29,6 +25,10 @@ public class DeliveryPartner {
     public void setEmailId(String emailId){
         this.emailId = emailId;
     }
+    public void setTotalEarnings(double totalEarnings){
+        this.totalEarnings = totalEarnings;
+    }
+
     public void setContactNumber(long contactNumber){
         this.contactNumber = contactNumber;
     }
@@ -53,12 +53,14 @@ public class DeliveryPartner {
     public String getPassword(){
         return this.password;
     }
-    public static int getPartnerCount(){
-        return partnerCount;
+    public double getTotalEarnings(){
+        return this.totalEarnings;
     }
-
+    public void addEarnings(double amount){
+        this.totalEarnings += amount;
+    }
     public String toString(){
         return "Name : " + partnerName +"\nID : "+partnerId+
-        "\nContact(email/phone) : "+emailId+"\n\t\t"+contactNumber ;
+        "\nContact(email/phone) : "+emailId+"\n\t\t\t"+contactNumber +"\nTotal Earnings : "+totalEarnings;
     }
 }

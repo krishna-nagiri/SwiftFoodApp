@@ -5,7 +5,10 @@ import java.util.Scanner;
 
 import com.infy.data.*;
 import com.infy.models.*;
-import com.infy.ui.*;
+import com.infy.ui.admin.*;
+import com.infy.ui.deliveryPartner.*;
+import com.infy.ui.restaurant.*;
+import com.infy.ui.customer.*;
 
 public class LoginService {
     Console console = System.console();
@@ -28,7 +31,7 @@ public class LoginService {
         for (Customer c : CustomerData.getAllCustomers()) {
             if (c.getEmailId().equals(emailId) && c.getPassword().equals(password)) {
                 System.out.println("-> Welcome! " + c.getCustomerName() + " Login Successful!");
-                CustomerHomePage.displayMenu(c);
+                CustomerHomePage.launch(c,sc);
                 return;
             }
         }

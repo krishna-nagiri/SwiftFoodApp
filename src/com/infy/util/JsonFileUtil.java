@@ -1,15 +1,23 @@
 package com.infy.util;
 
-import com.google.gson.Gson;
+import com.google.gson.*;
 import com.google.gson.reflect.TypeToken;
-import com.google.gson.GsonBuilder;
+import com.infy.data.LocalDateTimeAdapter;
+import com.infy.data.LocalTimeAdapter;
 
 import java.io.*;
 import java.lang.reflect.Type;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.List;
 
 public class JsonFileUtil<T> {
-    private final Gson gson = new GsonBuilder().setPrettyPrinting().create();
+    private final Gson gson = new GsonBuilder()
+        .registerTypeAdapter(LocalDateTime.class, new LocalDateTimeAdapter())
+        .registerTypeAdapter(LocalTime.class, new LocalTimeAdapter())
+        .setPrettyPrinting()
+        .create();
+
     private final String filePath;
     private final Type type;
 

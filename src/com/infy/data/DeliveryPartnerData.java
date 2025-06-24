@@ -1,10 +1,16 @@
 package com.infy.data;
 
+import com.infy.models.Customer;
 import com.infy.models.DeliveryPartner;
 import com.infy.util.JsonFileUtil;
 import com.infy.util.FilePaths;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.Writer;
 import java.lang.reflect.Type;
 import java.util.List;
 
@@ -42,5 +48,25 @@ public class DeliveryPartnerData {
             jsonUtil.writeData(partners);
         }
         return removed;
+    }
+    public static void saveAllDeliveryPartnersToFile(){
+        try (Writer writer = new FileWriter("data/delivery_partners.json")){
+            new GsonBuilder().setPrettyPrinting().create().toJson(partnerList,writer);
+        }catch(IOException e){
+            System.out.println("Error Saving changes!.."+ e.getMessage());
+        }
+    }
+    public static String generateNextDeliveryPartnerId() {
+        List<DeliveryPartner> allPartners = getAllDeliveryPartners();
+        int max = 0;
+        for (DeliveryPartner dp : allPartners) {
+            try {
+                int num = Integer.parseInt(dp.getPatnerId().replace("PAT", ""));
+                if (num > max) max = num;
+            } catch (Exception e) {
+                // Ignore malformed IDs
+            }
+        }
+        return String.format("PAT%03d", max + 1);
     }
 }

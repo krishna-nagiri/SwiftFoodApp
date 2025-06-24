@@ -108,7 +108,7 @@ public class SignupService {
             String password = readPassword(sc);
             if (password.isEmpty()) throw new IllegalArgumentException("Password cannot be empty");
 
-            float rating = 0.0f;
+            double rating = 0.0;
             Restaurant restaurant = new Restaurant(
                 restaurantId, restaurantName, emailId, password,
                 contactNumber, address, rating, startTime, endTime
