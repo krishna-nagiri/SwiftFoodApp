@@ -96,7 +96,7 @@ public class Food {
             "\nFood Name: " + foodName +
             "\nCuisine: " + cuisine +
             "\nFood Type: " + foodType +
-            "\nPrice: ₹" + unitPrice + "\n";
+            "\nPrice: Rs." + unitPrice + "\n";
     }
 
 

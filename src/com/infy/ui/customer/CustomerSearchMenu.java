@@ -120,7 +120,7 @@ public class CustomerSearchMenu {
         return null;
     }
     public static void printFoodDetails(Food food, Restaurant r){
-        System.out.println("-> " + food.getFoodId() + " | " + food.getFoodName() + " (₹" + food.getUnitPrice() + ")");
+        System.out.println("-> " + food.getFoodId() + " | " + food.getFoodName() + " (Rs " + food.getUnitPrice() + ")");
         System.out.println("   From: " + r.getRestaurantName() + " | Rating: " + r.getRating());
         System.out.println("--------------------------------------------");
     }

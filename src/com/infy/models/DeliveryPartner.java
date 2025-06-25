@@ -61,6 +61,6 @@ public class DeliveryPartner {
     }
     public String toString(){
         return "Name : " + partnerName +"\nID : "+partnerId+
-        "\nContact(email/phone) : "+emailId+"\n\t\t\t"+contactNumber +"\nTotal Earnings : "+totalEarnings;
+        "\nContact(email/phone) : "+emailId+"\n\t\t\t"+contactNumber +"\nTotal Earnings : "+(totalEarnings*10.0)/10.0;
     }
 }
