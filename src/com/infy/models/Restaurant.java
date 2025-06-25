@@ -1,9 +1,7 @@
 package com.infy.models;
 
 import java.time.LocalTime;
-import com.infy.data.*;
 
-import java.util.ArrayList;
 
 public class Restaurant {
     private String restaurantId;

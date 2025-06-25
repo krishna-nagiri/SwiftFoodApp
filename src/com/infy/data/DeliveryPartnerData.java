@@ -1,10 +1,10 @@
 package com.infy.data;
 
-import com.infy.models.Customer;
+
 import com.infy.models.DeliveryPartner;
 import com.infy.util.JsonFileUtil;
 import com.infy.util.FilePaths;
-import com.google.gson.Gson;
+
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 

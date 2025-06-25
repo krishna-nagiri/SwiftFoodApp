@@ -1,9 +1,7 @@
     package com.infy.models;
 
-    import com.infy.data.*;
     import java.time.LocalDateTime;
-    import java.util.List;
-    import com.infy.models.Food;
+    import java.util.List;    
     public class Order {
 
         private String orderId;
