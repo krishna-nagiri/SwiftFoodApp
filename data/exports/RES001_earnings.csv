@@ -1,0 +1,6 @@
+Order Id,Customer Id,Amount Rs,Payment Method
+ORD001,CUS002,38.0,Cash on Delivery
+ORD003,CUS002,38.0,UPI (78398487@yml)
+ORD009,CUS001,171.0,Cash on Delivery
+
+Total Earnings,247.0
