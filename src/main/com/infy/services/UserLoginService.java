@@ -58,7 +58,7 @@ public class UserLoginService {
             System.out.println("Invalid choice. Returning to main menu.");
         }
     }
-
+    
     private void handleRestaurant() {
         System.out.println("\nDo you have an account?");
         System.out.println("1. Yes - Login");

@@ -12,7 +12,6 @@ import main.com.infy.ui.customer.*;
 
 public class LoginService {
     Console console = System.console();
-
     private String readPassword(Scanner sc) {
         if (console != null) {
             char[] passwordChars = console.readPassword("Enter password: ");
